@@ -13,9 +13,7 @@ date          # mostra a data e a hora atuais
 hostname      # mostra o nome do sistema
 ```
 
-## Redirecionamento de entrada e saída
-
-### `>` (redirecionamento de saída, sobrescreve o arquivo)
+## `>` Redirecionamento de entrada e saída
 
 Cria um arquivo com o texto. Se o arquivo já existir, ele **apaga o conteúdo antigo** e escreve o novo.
 
@@ -58,6 +56,17 @@ Se isso acontecer, significa que **faltou fechar a aspa (`"`)**.
 Use `cat` para ver o que está dentro:
 
 ```bash
+cat > helloworld.txt
+```
+Pode usar outro jeito assim:
+```bash
 cat helloworld.txt
 ```
+É praticamente a mesma coisa.
+Ambos mostram o conteúdo do arquivo na tela.
 
+
+⚠️ Mas internamente há uma diferença sutil.
+`cat helloworld.txt`: o cat acessa o arquivo diretamente.
+
+`cat < helloworld.txt`: o shell abre o arquivo, e o cat só lê da entrada padrão.
